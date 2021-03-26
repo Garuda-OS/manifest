@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Repos of Garuda-OS -->
+<manifest>
+
+  <remote  name="garuda"
+           fetch="https://github.com/Garuda-OS"
+           revision="eleven"
+           sync-j="16" />
+
+  <!-- Gitlab remote -->
+  <remote  name="gitlab"
+           fetch="https://gitlab.com/" />
+
+ 
+ <!--Garuda-OS  Additions -->
+  <project path="android" name="manifest" remote="garuda" />  
+  <project path="build/make" name="android_build" groups="pdk" remote="garuda" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/soong" name="android_build_soong" groups="pdk,tradefed" remote="garuda" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project path="device/lineage/sepolicy" name="android_device_garuda_sepolicy" remote="garuda" />  
+  <project path="external/motorola/faceunlock" name="LordShen/external_motorola_faceunlock" remote="gitlab" revision="11" />
+  <project path="frameworks/av" name="android_frameworks_av" groups="pdk" remote="garuda" />
+  <project path="frameworks/base" name="android_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="garuda" />
+  <project path="frameworks/native" name="android_frameworks_native" groups="pdk" remote="garuda" />
+  <project path="hardware/lineage/interfaces" name="android_hardware_garuda_interfaces" remote="garuda" />  
+  <project path="lineage-sdk" name="android_garuda-sdk" remote="garuda" />  
+  <!-- <project path="packages/apps/OmniStyle" name="android_packages_apps_Omnistyle" groups="pdk-fs" remote="garuda"/> -->
+  <project path="packages/apps/Settings" name="android_packages_apps_Settings" groups="pdk-fs" remote="garuda" /> 
+  <project path="packages/apps/Trebuchet" name="android_packages_apps_Trebuchet" remote="garuda" /> 
+  <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" remote="garuda" />   
+  <project path="packages/services/Telephony" name="LineageOS/android_packages_services_Telephony" groups="pdk-cw-fs,pdk-fs"/>  
+  <project path="system/core" name="android_system_core" groups="pdk" remote="garuda" />  
+  <project path="vendor/lineage" name="android_vendor_garuda" remote="garuda" />
+ <project path="vendor/gapps" name="techyminati/vendor_gapps" remote="gitlab" revision="11" clone-depth="1" />
+ 
+</manifest>
