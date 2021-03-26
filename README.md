@@ -18,6 +18,7 @@ Credits:
  * [**LineageOS**](https://github.com/LineageOS)
  * [**FusionOS**](https://github.com/Fusion-OS)
  * [**POSP**](https://github.com/POSP)
+ * [**ConquerOS**](https://github.com/ConquerOS)
 -----------------------------------------------------------------------------
 
 
